@@ -1,6 +1,6 @@
 import countTimer from './countTimer.js';
-import toggleModal from './toggleModal.js'; 
+import initMenuAndModal from './initMenuAndModal.js'; 
 
 countTimer('31 December 2026'); 
 
-toggleModal();
+initMenuAndModal();
