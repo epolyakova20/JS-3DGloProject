@@ -1,4 +1,4 @@
-import countTimer from './src/one.js';
+import countTimer from './countTimer.js';
 
 // Вызываем функцию и передаем дату дедлайна. 
 // Попробуйте сначала поставить прошедшую дату (например, '1 May 2024'), 
