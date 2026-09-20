@@ -1,7 +1,7 @@
-import countTimer from './countTimer.js';
+import timer from './timer.js';
 import menu from './menu.js'; 
 import modal from './modal.js';
 
-countTimer('31 December 2026'); 
+timer('31 December 2026'); 
 menu();
 modal();
