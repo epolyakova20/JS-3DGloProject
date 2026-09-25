@@ -1,17 +1,28 @@
 const menu = () => {
-    const menuBtn = document.querySelector('.menu')
-    const menu = document.querySelector('menu')
-    const closeBtn = menu.querySelector('.close-btn')
-    const menuItems = menu.querySelectorAll('ul>li>a')
+    const menuBtn = document.querySelector('.menu');
+    const menuElement = document.querySelector('menu');
+
+    if (!menuBtn || !menuElement) return;
 
     const handleMenu = () => {
-        menu.classList.toggle('active-menu')
-    }
+        menuElement.classList.toggle('active-menu');
+    };
 
-    menuBtn.addEventListener('click', handleMenu)
-    closeBtn.addEventListener('click', handleMenu)
+    // 1. Обработчик кнопки-бургера
+    menuBtn.addEventListener('click', handleMenu);
 
-    menuItems.forEach(menuItem => menuItem.addEventListener('click', handleMenu))
-}
+    // 2. Один обработчик для крестика и пунктов меню
+    menuElement.addEventListener('click', (event) => {
+        const target = event.target;
 
-export default menu
+        if (
+            target.closest('.close-btn') ||
+            target.closest('li a')
+        ) {
+            event.preventDefault();
+            handleMenu();
+        }
+    });
+};
+
+export default menu;
