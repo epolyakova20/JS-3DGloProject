@@ -8,21 +8,21 @@ const menu = () => {
         menuElement.classList.toggle('active-menu');
     };
 
-    // 1. Обработчик кнопки-бургера
     menuBtn.addEventListener('click', handleMenu);
 
-    // 2. Один обработчик для крестика и пунктов меню
     menuElement.addEventListener('click', (event) => {
         const target = event.target;
 
-        if (
-            target.closest('.close-btn') ||
-            target.closest('li a')
-        ) {
-            event.preventDefault();
+        if (target.closest('.close-btn')) {
+            handleMenu();
+            return;
+        }
+
+        if (target.closest('li a')) {
             handleMenu();
         }
     });
 };
 
 export default menu;
+
